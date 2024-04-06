@@ -2,6 +2,8 @@
 	import Counter from './Counter.svelte';
 	import welcome from '$lib/images/svelte-welcome.webp';
 	import welcome_fallback from '$lib/images/svelte-welcome.png';
+	import { Timeline } from 'svelte-vertical-timeline';
+	import ImageBox from './ImageBox.svelte';
 </script>
 
 <svelte:head>
@@ -24,6 +26,10 @@
 	<h2>
 		try editing <strong>src/routes/+page.svelte</strong>
 	</h2>
+	<ImageBox
+		title="Batman"
+		imageUrl="https://cdn.mobygames.com/06e74fd8-abb3-11ed-9e18-02420a00019a.webp"
+	></ImageBox>
 
 	<Counter />
 </section>
