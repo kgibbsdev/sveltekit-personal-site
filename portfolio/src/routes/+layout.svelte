@@ -1,5 +1,5 @@
 <script>
-	import Header from './Header.svelte';
+	import Header from '../lib/components/Header.svelte';
 	import './styles.css';
 	import '../app.css';
 </script>
@@ -12,7 +12,7 @@
 	</main>
 
 	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+		<p>{'\u00A9'} Kyle Gibbs {new Date().getFullYear()}</p>
 	</footer>
 </div>
 

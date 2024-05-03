@@ -1,9 +1,11 @@
 <script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
+	import headshot from '$lib/images/KyleGibbsProfile.png';
 	import { Timeline } from 'svelte-vertical-timeline';
-	import ImageBox from './ImageBox.svelte';
+	import ImageBox from '../lib/components/ImageBox.svelte';
+
+	let imageUrls = {
+		batman: 'https://cdn.mobygames.com/06e74fd8-abb3-11ed-9e18-02420a00019a.webp'
+	};
 </script>
 
 <svelte:head>
@@ -11,55 +13,20 @@
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
+<section class="flex flex-row content-center items-center">
+	<div class="flex-1 text-center text-lg flex-col">
+		<h1>Kyle Gibbs</h1>
+		<h4>Software Engineer for Video games</h4>
+	</div>
 
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-	<ImageBox
-		title="Batman"
-		imageUrl="https://cdn.mobygames.com/06e74fd8-abb3-11ed-9e18-02420a00019a.webp"
-	></ImageBox>
-
-	<Counter />
+	<span class="flex-1 text-center text-lg pb-5 rounded">
+		<picture class="rounded-full">
+			<img class="rounded-full" src={headshot} alt="Welcome" />
+		</picture>
+	</span>
 </section>
 
-<style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
-
-	h1 {
-		width: 100%;
-	}
-
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
-</style>
+<section class="flex flex-row justify-center items-center">
+	<h3 class="section-header">Commercial Games</h3>
+	<ImageBox title="Batman" imageUrl={imageUrls.batman}></ImageBox>
+</section>
