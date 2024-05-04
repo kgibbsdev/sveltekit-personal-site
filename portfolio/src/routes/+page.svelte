@@ -20,8 +20,8 @@
 	</div>
 
 	<span class="flex-1 text-center text-lg pb-5 rounded">
-		<picture class="rounded-full">
-			<img class="rounded-full" src={headshot} alt="Welcome" />
+		<picture>
+			<ImageBox title="Kyle Gibbs" rounded={true} imageUrl={headshot} />
 		</picture>
 	</span>
 </section>

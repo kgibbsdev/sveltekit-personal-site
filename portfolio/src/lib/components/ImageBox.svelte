@@ -5,7 +5,7 @@
 	// Props
 	export let imageUrl;
 	export let title = 'Runescape';
-
+	export let rounded = false;
 	// Reactive variable for overlay visibility
 	let showOverlay = false;
 
@@ -24,18 +24,18 @@
 	});
 </script>
 
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y-no-static-element-interactions -->
 <div
 	class="relative overflow-hidden cursor-pointer"
 	on:mouseenter={() => (showOverlay = true)}
 	on:mouseleave={() => (showOverlay = false)}
 	on:click={openModal}
 >
-	<!-- Image -->
-	<img class="w-full h-auto" src={imageUrl} alt={title} />
-
-	<!-- Overlay -->
+	<img class="w-7/12 h-auto" src={imageUrl} alt={title} class:rounded-full={rounded} />
 	<div
-		class="overlay absolute inset-0 flex justify-center items-center bg-blue-500 text-white"
+		class="w-7/12 overlay absolute inset-0 flex justify-center items-center bg-blue-500 text-white"
+		class:rounded-full={rounded}
 		style="display: {showOverlay ? 'flex' : 'none'}"
 	>
 		<h2>{title}</h2>
