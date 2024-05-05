@@ -4,8 +4,9 @@
 	import Modal from './Modal.svelte';
 	// Props
 	export let imageUrl;
-	export let title = 'Runescape';
+	export let title = 'NO TITLE';
 	export let rounded = false;
+	export let imgWidth = 400;
 	// Reactive variable for overlay visibility
 	let showOverlay = false;
 
@@ -32,11 +33,13 @@
 	on:mouseleave={() => (showOverlay = false)}
 	on:click={openModal}
 >
-	<img class="w-7/12 h-auto" src={imageUrl} alt={title} class:rounded-full={rounded} />
+	<!-- Note how the image tag needs width set as an attribute -->
+	<img class="h-auto" src={imageUrl} alt={title} width={imgWidth} class:rounded-full={rounded} />
+	<!-- Compared to the div which needs it added in the style attribute -->
 	<div
-		class="w-7/12 overlay absolute inset-0 flex justify-center items-center bg-blue-500 text-white"
+		class="absolute inset-0 flex justify-center items-center bg-blue-500 text-white"
+		style="display: {showOverlay ? 'flex' : 'none'}; width: {`${imgWidth}px`};"
 		class:rounded-full={rounded}
-		style="display: {showOverlay ? 'flex' : 'none'}"
 	>
 		<h2>{title}</h2>
 	</div>

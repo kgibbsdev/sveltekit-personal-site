@@ -21,12 +21,15 @@
 
 	<span class="flex-1 text-center text-lg pb-5 rounded">
 		<picture>
-			<ImageBox title="Kyle Gibbs" rounded={true} imageUrl={headshot} />
+			<ImageBox title="Kyle Gibbs" rounded={true} imageUrl={headshot} imgWidth={400} />
 		</picture>
 	</span>
 </section>
 
 <section class="flex flex-row justify-center items-center">
-	<h3 class="section-header">Commercial Games</h3>
-	<ImageBox title="Batman" imageUrl={imageUrls.batman}></ImageBox>
+	<div class="flex pb-10 -ml-10">
+		<h3 class="section-header">Commercial Games</h3>
+	</div>
+
+	<ImageBox title="Batman" imageUrl={imageUrls.batman} imgWidth={300}></ImageBox>
 </section>
